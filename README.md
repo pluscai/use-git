@@ -39,3 +39,13 @@ $ mv README.md README
 $ git rm README.md
 $ git add README
 ```
+
+## 2.3 Viewing the Commit History
+
+`git log`的两类操作：
+
+1. 展示log的方式不一样：eg：`git log --oneline`
+
+2. 对输出的log进行筛选：可按照时间、条数，甚至可以针对某个文件夹打印log日志
+
+   ​
