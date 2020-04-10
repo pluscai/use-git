@@ -16,7 +16,7 @@ $ git add -h
 ```
 
 # 2.Git Basics
-## 2.2 Recording Changes to the Repository
+## 2.2 Recording Changes to the Repository(over)
 ### Committing Your Changes
 > Remember that the commit records the snapshot you set up in your staging area.  Anything you didn’t stage is still sitting there modified; you can do another commit to add it to your history.
 
@@ -39,4 +39,3 @@ $ mv README.md README
 $ git rm README.md
 $ git add README
 ```
-
