@@ -30,3 +30,13 @@ git commit -a -m"" => git add All  +  git commit -m""
 - `git rm` : The `git rm` command does that, and also removes the file from your working directory
 - `git rm --cached xx`:   keep the file on your hard drive but not have Git track it anymore
 
+### Moving Files
+
+```
+$ git mv file_from file_to
+=>  this command is same to 
+$ mv README.md README
+$ git rm README.md
+$ git add README
+```
+
