@@ -4,7 +4,7 @@ $ git help <verb>
 $ git <verb> --help
 
 $ git <verb> -h
-```
+``` 
 
 ## example-1:
 ```
