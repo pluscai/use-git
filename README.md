@@ -45,7 +45,13 @@ $ git add README
 `git log`的两类操作：
 
 1. 展示log的方式不一样：eg：`git log --oneline`
-
 2. 对输出的log进行筛选：可按照时间、条数，甚至可以针对某个文件夹打印log日志
 
-   ​
+## 2.4 Undoing Things(撤销)
+
+撤销涉及两种情况：
+
+1. 已提交：要撤销已经提交的修改用`git commit --amend` 会用新提交覆盖之前的提交
+2. 未提交的：根据命令行`git status` 即可看到如何撤销
+   - 已添加进暂存区的： `git restore --staged文件名`  从暂存区中移除
+   - 未添加进暂存区，撤销本地文件的修改：`git restore 文件名`（有的版本是`git checkout 文件名`）
