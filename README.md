@@ -55,3 +55,32 @@ $ git add README
 2. 未提交的：根据命令行`git status` 即可看到如何撤销
    - 已添加进暂存区的： `git restore --staged文件名`  从暂存区中移除
    - 未添加进暂存区，撤销本地文件的修改：`git restore 文件名`（有的版本是`git checkout 文件名`）
+
+## 2.5 Working with Remotes
+
+>  It’s important to note that the `git fetch` command only downloads the data to your local repository — it doesn’t automatically merge it with any of your work or modify what you’re currently working on. You have to merge it manually into your work when you’re ready.
+
+### 本地仓库连接远程仓库的增删改查操作：
+
+1. 增
+
+   `git reomte add 别名 远程地址`
+   
+2. 删
+
+   `git remote remove 别名`
+
+3. 改
+
+   给远程仓库重新起别名 `git remote rename oldShortname newShortname`
+
+4. 查
+   - 查看远程仓库列表 `git remote -v`
+   - 查看远程列表详细 `git remote show 别名`
+
+### 如何拉取推送修改：
+
+1. 拉取远程仓库：`git fetch 远程仓库别名`
+2. 拉取远程仓库并与本地自动合并：`git pull 远程仓库别名`
+3. 推送本地修改至远程：`git push 远程仓库别名 远程分支名`
+
