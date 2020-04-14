@@ -58,29 +58,98 @@ $ git add README
 
 ## 2.5 Working with Remotes
 
->  It’s important to note that the `git fetch` command only downloads the data to your local repository — it doesn’t automatically merge it with any of your work or modify what you’re currently working on. You have to merge it manually into your work when you’re ready.
+>  It’s important to note that the `git fetch` command only downloads the data to your local repository — ***it doesn’t automatically merge it*** with any of your work or modify what you’re currently working on. You have to merge it manually into your work when you’re ready.
 
-### 本地仓库连接远程仓库的增删改查操作：
+### 2.5.1 本地仓库连接远程仓库的增删改查操作：
 
-1. 增
+1. **增**
 
    `git reomte add 别名 远程地址`
    
-2. 删
+2. **删**
 
    `git remote remove 别名`
 
-3. 改
+3. **改**
 
    给远程仓库重新起别名 `git remote rename oldShortname newShortname`
 
-4. 查
+4. **查**
+   
    - 查看远程仓库列表 `git remote -v`
    - 查看远程列表详细 `git remote show 别名`
 
-### 如何拉取推送修改：
+### 2.5.2 如何拉取推送修改：
 
 1. 拉取远程仓库：`git fetch 远程仓库别名`
 2. 拉取远程仓库并与本地自动合并：`git pull 远程仓库别名`
 3. 推送本地修改至远程：`git push 远程仓库别名 远程分支名`
+
+## 2.6 Tagging
+
+### 2.6.1 仓库中某次提交打标签的基本操作
+
+1. **增**
+
+   - `git tag -a v1.4 -m"my version 1.4"` 
+
+     ***注解类型tag***，该类型tag会记录此次tag的详细信息：谁打的tag、什么时间打的tag..
+
+   - `git tag v1.4-1w -m"lightweight tag"` 
+
+     ***轻量类型tag***，不会记录tag的详细信息
+
+   - `git tag -a v1.2 9fcebo2` 
+
+     针对提交历史的某次提交打tag，`9fcebo2` 是提交的checksum（part of it）
+
+2. **查**
+
+   - `git tag --list` 
+
+     查看所有tag的name
+
+   - `git tag --list "v1.2*"` 
+
+     查看tag名以`v1.2`开头的标签名，eg `v1.2.2`
+
+   - `git show v1.4` 
+
+     查看tag的详细信息
+
+3. **删**
+
+   - `git tag -d <tagname>`
+
+     删除tag，注意远程的不会被删掉
+
+   - `git push <remote> :refs/tags/<tagname>`
+
+     删远程仓库tag的方法一，eg: `git push origin :refs/tags/v1.4-lw`
+
+   - `git push origin --delete <tagname>`
+
+     删远程仓库tag的方法二
+
+### 2.6.2 tag提交至远程仓库
+
+- `git push origin v1.5`
+
+  提交本地的指定tag到远程
+
+- `git push origin --tags`
+
+  提交本地所有tag到远程
+
+### 2.6.3 切换到tag所在的commit
+
+- `git checkout v2.0.0`
+
+  切换到 v2.0.0标签 所在的commit,
+
+- `git checkout -b version2 v2.0.0`
+
+  在当前v2.0.0这次提交的commit基础上创建新分支；此命令根据提示敲，git版本不同，命令也可能是`git switch -c version2`
+
+  
 
