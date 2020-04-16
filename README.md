@@ -75,7 +75,7 @@ $ git add README
    给远程仓库重新起别名 `git remote rename oldShortname newShortname`
 
 4. **查**
-   
+  
    - 查看远程仓库列表 `git remote -v`
    - 查看远程列表详细 `git remote show 别名`
 
@@ -153,3 +153,10 @@ $ git add README
 
   
 
+## 2.7 Git Aliases
+
+相当于为git命令配置 简短的快捷方式，例如
+
+`$ git config --global alias.ci commit`
+
+之后，你就可以用`git ci` 来替代 `git commit` 了
