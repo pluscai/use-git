@@ -160,3 +160,15 @@ $ git add README
 `$ git config --global alias.ci commit`
 
 之后，你就可以用`git ci` 来替代 `git commit` 了
+
+## 2.8 Summary
+
+we konw now:
+
+- create or clone a respository
+- make changes,stage and commit those changes
+- view history of changes
+
+we will go on:
+
+- Git`s killer feature --  ***branch***
