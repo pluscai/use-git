@@ -222,7 +222,7 @@ How does Git know what branch you’re currently on? It keeps a special pointer 
 
 `HEAD`指针指向当前所在分支，切换分支，就是将`HEAD`指针指向该分支
 
-![HEAD moves when you checkout.](assets\checkout-master.png)
+![HEAD moves when you checkout.](assets/checkout-master.png)
 
 ### 3.1.4 Git分支的基本操作
 
