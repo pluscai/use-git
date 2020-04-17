@@ -172,3 +172,76 @@ we konw now:
 we will go on:
 
 - Git`s killer feature --  ***branch***
+
+# 3.Git Branching
+
+## 3.1 Branches in a Nutshell
+
+> Branching means you diverge from the main line of development and continue to do work without messing with that main line
+>
+> Git can change the way that you develop
+
+- 每一次stage、commit背后，Git都做了些什么？
+- 
+
+> A branch in Git is simply a lightweight movable pointer to one of these commits. The default branch name in Git is `master`. As you start making commits, you’re given a `master` branch that points to the last commit you made. Every time you commit, the `master` branch pointer moves forward automatically.
+
+How does Git know what branch you’re currently on? It keeps a special pointer called `HEAD`
+
+
+
+### 3.1.1 分支是什么？
+
+> Branching means you diverge from the main line of development and continue to do work without messing with that main line
+
+### 3.1.2 揭秘每一次stage、commit背后故事
+
+***when you stage***：
+
+1. Staging the files computes a checksum for each one
+
+2. stores that version of the file in the Git repository (Git refers to them as *blobs*),
+
+3. adds that checksum to the staging area
+
+***when you create a commit***
+
+1. stores *blobs* as a `tree object`
+2. create a  `commit object ` 
+3. ``commit object ` 存储着对 `tree object`的引用以及此次提交的其他信息
+
+![A commit and its tree.](https://git-scm.com/book/en/v2/images/commit-and-tree.png)
+
+### 3.1.3 Git中的branch
+
+> A branch in Git is simply a lightweight ***movable pointer*** to one of these commits. 
+
+如下面的`testing`分支
+
+> How does Git know what branch you’re currently on? It keeps a special pointer called `HEAD` 
+
+`HEAD`指针指向当前所在分支，切换分支，就是将`HEAD`指针指向该分支
+
+![HEAD moves when you checkout.](D:\csx\learn-git\assets\checkout-master.png)
+
+### 3.1.4 Git分支的基本操作
+
+1. 创建分支
+
+   `git branch 分支名`
+
+2. 切换分支
+
+   `git checkout 分支名`
+
+3. 创建并切换分支
+
+   `git checkout -b 分支名`
+
+4. 查看各个分支log
+
+   `git log --oneline --decorate --graph --all`
+
+   `git log`默认是查看当期分支下的log
+
+   
