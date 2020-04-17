@@ -210,7 +210,7 @@ How does Git know what branch you’re currently on? It keeps a special pointer 
 2. create a  `commit object ` 
 3. ``commit object ` 存储着对 `tree object`的引用以及此次提交的其他信息
 
-![A commit and its tree.](https://git-scm.com/book/en/v2/images/commit-and-tree.png)
+![A commit and its tree.](assets/commit-and-tree.png)
 
 ### 3.1.3 Git中的branch
 
@@ -222,7 +222,7 @@ How does Git know what branch you’re currently on? It keeps a special pointer 
 
 `HEAD`指针指向当前所在分支，切换分支，就是将`HEAD`指针指向该分支
 
-![HEAD moves when you checkout.](D:\csx\learn-git\assets\checkout-master.png)
+![HEAD moves when you checkout.](assets\checkout-master.png)
 
 ### 3.1.4 Git分支的基本操作
 
