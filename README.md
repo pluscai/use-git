@@ -287,3 +287,26 @@ index.html |    1 +
 <img src="assets/image-20200417152627902.png"  style="zoom:50%;" />
 
 > 注意：遇到冲突，要把冲突解决了，再手动 stage、commit
+
+## 3.3 Branch Management
+
+- 查看分支
+
+  `git branch`
+
+- 查看分支并显示每个分支最后一次提交
+
+  ```console
+  $ git branch -v
+    iss53   93b412c Fix javascript issue
+  * master  7a98805 Merge branch 'iss53'
+    testing 782fd34 Add scott to the author list in the readme
+  ```
+
+- 查看已合并、未合并的分支
+
+  `git branch --merged`
+
+  `git branch --no-merged`
+
+  
