@@ -210,7 +210,7 @@ How does Git know what branch you’re currently on? It keeps a special pointer 
 2. create a  `commit object ` 
 3. ``commit object ` 存储着对 `tree object`的引用以及此次提交的其他信息
 
-![A commit and its tree.](assets/commit-and-tree.png)
+<img src="assets/commit-and-tree.png" alt="A commit and its tree." style="zoom:50%;" />
 
 ### 3.1.3 Git中的branch
 
@@ -222,7 +222,7 @@ How does Git know what branch you’re currently on? It keeps a special pointer 
 
 `HEAD`指针指向当前所在分支，切换分支，就是将`HEAD`指针指向该分支
 
-![HEAD moves when you checkout.](assets/checkout-master.png)
+<img src="assets/checkout-master.png" alt="HEAD moves when you checkout." style="zoom:50%;" />
 
 ### 3.1.4 Git分支的基本操作
 
@@ -230,18 +230,60 @@ How does Git know what branch you’re currently on? It keeps a special pointer 
 
    `git branch 分支名`
 
-2. 切换分支
+2. 删除分支
+
+   `git branch -d 分支名`
+
+3. 切换分支
 
    `git checkout 分支名`
 
-3. 创建并切换分支
+4. 创建并切换分支
 
    `git checkout -b 分支名`
 
-4. 查看各个分支log
+5. 查看各个分支log
 
    `git log --oneline --decorate --graph --all`
 
    `git log`默认是查看当期分支下的log
 
-   
+## 3.2 Basic Branching and Merging
+
+两种合并的情况：`Fast-forward`,`merge-commit`
+
+### `Fast-forward` 快进
+
+> when you try to merge one commit with a commit that can be reached by following the first commit’s history, Git simplifies things by ***moving the pointer*** forward because there is no divergent work to merge together — this is called a “fast-forward.”
+
+如下：将`hotfix`分支合并到`master`分支上，只是将`master`分支上的指针向前移了一下。
+
+```console
+$ git checkout master
+$ git merge hotfix
+Updating f42c576..3a0874c
+Fast-forward
+ index.html | 2 ++
+ 1 file changed, 2 insertions(+)
+```
+
+<img src="assets/image-20200417151200238.png" style="zoom:50%;" />
+
+### `merge commit` 合并提交
+
+> Instead of just moving the branch pointer forward, Git creates a new snapshot that results from this ***three-way merge*** and automatically creates a new commit that points to it. This is referred to as a ***merge commit***, and is special in that it has more than one parent
+
+如下图：将`iss53` 分支合并到`master`分支，三方合并生成一个新的提交（合并提交）。
+
+```console
+$ git checkout master
+Switched to branch 'master'
+$ git merge iss53
+Merge made by the 'recursive' strategy.
+index.html |    1 +
+1 file changed, 1 insertion(+)
+```
+
+<img src="assets/image-20200417152627902.png"  style="zoom:50%;" />
+
+> 注意：遇到冲突，要把冲突解决了，再手动 stage、commit
