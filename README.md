@@ -310,8 +310,7 @@ index.html |    1 +
   `git branch --no-merged`			
 
   
-
-  ## 3.4 Branching Workflows
+## 3.4 Branching Workflows
 
   利用分支的两种典型工作流：
 
@@ -323,4 +322,57 @@ index.html |    1 +
 
   2. `topic branch`:为了一个新功能、新想法，你可以临时随心所欲的开新分支。
 
-  
+## 3.5 Remote Branches
+
+> It’s important to note that when you do a fetch that brings down new remote-tracking branches, you don’t automatically have local, editable copies of them. In other words, in this case, you don’t have a new `serverfix` branch — you have only an `origin/serverfix` pointer that you can’t modify
+
+1. 推送本地分支到远程（远程没有该分支）
+
+   ```git push <remote> <branch>```
+
+   例如将本地`serverfix`分支推送到远程，这样远程仓库也有`serverfix`分支了: `git push origin serverfix`
+
+2. 本地拉取远程分支（本地没有该分支）：两步走-先拉取再checkout
+
+   ```console
+   $ git fetch origin
+   
+   $ git checkout -b serverfix origin/serverfix
+   ```
+
+   拉取远程`serverfix`分支到本地的`serverfix`分支
+
+3. 将本地已有分支与远程已有分支建立track关系
+
+   如下在本地`serverfix`分支敲这个命令：将当前分支 与 远程仓库的`serverfix`分支建立track关系
+
+   ```console
+   $ git branch --set-upstream-to origin/serverfix 
+   Branch serverfix set up to track remote branch serverfix from origin.
+   
+   or 简写成：
+   $ git branch -u origin/serverfix
+   ```
+
+4. 其他命令
+
+   - 查看本地分支与远程分支的track关系：`git branch -vv`
+
+     ```console
+     $ git branch -vv
+       iss53     7e424c3 [origin/iss53: ahead 2] Add forgotten brackets
+       master    1ae2a45 [origin/master] Deploy index fix
+     * serverfix f8674d9 [teamone/server-fix-good: ahead 3, behind 1] This should do it
+       testing   5ea463a Try something new
+     ```
+
+   - 远程仓库分支列表以及详细
+
+     列表：`git ls-remote <remote>`
+
+     详细：`git remote show <remote>`
+
+   - 删除远程仓库的分支
+
+     `git push origin --delete serverfix`
+
