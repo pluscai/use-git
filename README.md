@@ -1,4 +1,4 @@
-> GIT NOTES
+> GIT NOTES2
 # 1.Getting Started
 ## 1.7 Getting Help
 ```
@@ -326,9 +326,13 @@ index.html |    1 +
 
 
 
+
 ```
 $ git fetch
 From https://github.com/pluscai/learn-git
  * [new branch]      serverfix  -> origin/serverfix
 ```
+
+
+  
 
