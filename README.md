@@ -307,6 +307,20 @@ index.html |    1 +
 
   `git branch --merged`
 
-  `git branch --no-merged`
+  `git branch --no-merged`			
+
+  
+
+  ## 3.4 Branching Workflows
+
+  利用分支的两种典型工作流：
+
+  1. `master`分支用来管理稳定发布版本的代码；
+
+     另外搞个平行分支 `develop`用于管理测试版本、不稳定代码
+
+     测试通过,将`develop`分支合并进`master`分支
+
+  2. `topic branch`:为了一个新功能、新想法，你可以临时随心所欲的开新分支。
 
   
