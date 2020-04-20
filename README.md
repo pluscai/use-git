@@ -1,4 +1,4 @@
-> GIT NOTES
+> GIT NOTES2
 # 1.Getting Started
 ## 1.7 Getting Help
 ```
