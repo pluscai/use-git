@@ -323,4 +323,12 @@ index.html |    1 +
 
   2. `topic branch`:为了一个新功能、新想法，你可以临时随心所欲的开新分支。
 
-  
+
+
+
+```
+$ git fetch
+From https://github.com/pluscai/learn-git
+ * [new branch]      serverfix  -> origin/serverfix
+```
+
