@@ -376,3 +376,39 @@ index.html |    1 +
 
      `git push origin --delete serverfix`
 
+
+
+## 3.6 `Rebasing`
+
+两种合并分支的方式：`merge`,`rebase`
+
+> With the `rebase` command, you can take all the changes that were committed on one branch and replay them on a different branch
+
+###  `rebase`是如何合并分支的
+
+如下图：采用`rebase`方式将`experiment`分支上的内容合并到`master`分支上
+
+![image-20200422105742805](assets/image-20200422105742805.png)
+
+`git rebase master`这个命令幕后都做了什么操作：
+
+1. 先`experiment`分支的修改暂存起来
+2. 将`experiment`分支reset到`master`分支的状态
+3. 在重置后的`experiment`分支上replay刚刚暂存起来的修改
+
+最后：切换到`master`分支，进行简单的`fast-forward`合并即可
+
+### 为什么要用`rebase`（和`merge`的区别）
+
+如上例中所示，`rebase`的提交历史更干净线性
+
+### 何时(不)使用`rebase`
+
+> In general the way to get the best of both worlds is to `rebase` local changes you’ve made but haven’t shared yet before you push them in order to clean up your story, but never `rebase` anything you’ve pushed somewhere.
+
+- 在本地开发时可以使用，让我们的提交历史更干净易读
+
+- 不要使用`rebase`合并已经push到远程仓库的内容
+
+
+
