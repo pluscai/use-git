@@ -422,5 +422,25 @@ index.html |    1 +
 
 ## 5.1 Distributed Workflows
 
+利用`GIt`进行协作的常见方式：
+
+- 类似`svn`方式：多个用户向一个中央远程仓库提交
+
+- 类似于`Github`：先`fork`，再`pull request`
+
+  > To contribute to that project, you create your own public clone of the project and push your changes to it. Then, you can ***send a request*** to the maintainer of the main project to ***pull in your changes.*** 
+
+- 类似于`linux`那种多个层级，职责分配型的协作方式
+
+
+
+## 5.2 Contributing to a Project
+
+如何参与到一个Git项目中？用的`github`,所以本章节略过
+
+## 5.3 Maintaining a Project
+
+如何维持一个项目？略过，待到有需求再来瞅。
+
 
 
