@@ -412,5 +412,15 @@ index.html |    1 +
 
 # 4. Git on the Server
 
+设置一个共享服务器，方便协同开发
+
+如果不想自己架设一个服务器，也可以选择托管服务器，比如`Github`
+
+
+
+# 5. Distributed Git (分布式Git)
+
+## 5.1 Distributed Workflows
+
 
 
